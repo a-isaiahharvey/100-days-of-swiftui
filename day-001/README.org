@@ -1,5 +1,4 @@
 #+title: Day 1
-#+subtitle: Variables, simple data types, and string interpolation
 #+author: Allister Isaiah Harvey
 #+date: 02-11-2023
 #+property: header-args :tangle Day1.swift
