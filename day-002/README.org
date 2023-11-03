@@ -1,0 +1,277 @@
+#+title: Day 2
+#+author: Allister Isaiah Harvey
+#+date: 03-11-2023
+#+property: header-args :tangle Day2.swift
+#+babel: :session *swift* :cache yes :tangle yes
+#+startup: showeverything
+#+options: toc:3
+
+* Table of Contents :toc:
+- [[#how-to-store-truth-with-booleans][How to store truth with Booleans]]
+  - [[#test---doubles-and-booleans][Test - Doubles and booleans]]
+- [[#how-to-join-strings-together][How to join strings together]]
+  - [[#test---doubles-and-booleansc][Test - Doubles and booleansC]]
+
+* How to store truth with Booleans
+
+A very simple type called a Boolean, which stores either true or false. The ~hasSuffix()~ method from ~String~ and the ~isMultiple(of:)~ from ~Int~ both return Booleans. Making a Boolean is just as easy as making any other data type except you should assign an initial value of either true or false, like this:
+
+#+begin_src swift :tangle no
+let goodDogs = true
+let gameOver = false
+#+end_src
+
+Unlike the other types of data, Booleans don’t have arithmetic operators such as ~+~ and ~-~. However, Booleans do have one special operator, !, which means “not”. This flips a Boolean’s value from true to false, or false to true. For example:
+
+#+begin_src swift
+var isAuthenticated = false
+isAuthenticated = !isAuthenticated
+print(isAuthenticated)
+isAuthenticated = !isAuthenticated
+print(isAuthenticated)
+#+end_src
+
+Booleans do have a little extra functionality that can be useful. In particular, if you call ~toggle()~ on a Boolean it will flip a true value to false, and a false value to true:
+
+#+begin_src swift
+var gameOver = false
+print(gameOver)
+
+gameOver.toggle()
+print(gameOver)
+#+end_src
+
+** Test - Doubles and booleans
+
+Question 1: Which of these lines create Booleans?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var animated = false
+#+end_src
+
+This creates a Boolean with the name ~animated~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var isLoaded = 1
+#+end_src
+
+This creates an integer.
+
+Question 2: Which of these lines create Booleans?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var dressHasPockets = true
+#+end_src
+
+This creates a Boolean with the name ~dressHasPockets~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var zoomed = 0
+#+end_src
+
+This creates an integer.
+
+Question 3: Which of these lines create Booleans?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var isReady = false
+#+end_src
+
+This creates a Boolean with the name ~isReady~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var isEnabled = 0.0
+#+end_src
+
+This creates an double.
+
+Question 4: Which of these lines create Booleans?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var isEncrypted = true
+#+end_src
+
+This creates a Boolean with the name ~isEncrypted~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var isHidden = "yes"
+#+end_src
+
+This creates an string.
+
+Question 5: Which of these lines create Booleans?
+
+- [ ] Option 1:
+#+begin_src swift :tangle no
+var sorted = "false"
+#+end_src
+
+Although this uses *false*, it's inside double quotes so this creates a string.
+
+- [X] Option 2:
+#+begin_src swift :tangle no
+var isVisible = false
+#+end_src
+
+This creates a Boolean with the name ~isVisible~.
+
+Question 6: Which of these lines create Booleans?
+
+- [ ] Option 1:
+#+begin_src swift :tangle no
+var isSaved = "true"
+#+end_src
+
+Although this uses *true*, it's inside double quotes so this creates a string.
+
+- [X] Option 2:
+#+begin_src swift :tangle no
+var loggedIn = true
+#+end_src
+
+This creates a Boolean with the name ~loggedIn~.
+
+
+* How to join strings together
+
+String concatenation is the process of joining two or more strings together to form a new string. You can use the ~+~ operator to concatenate strings, as you have done in your code. For example, you can create a greeting by joining ~"Hello, "~ and ~“world!”~ together:
+
+#+begin_src swift
+let firstPart = "Hello, " 
+let secondPart = "world!" 
+var greeting = firstPart + secondPart 
+print(greeting) // prints “Hello, world!”
+#+end_src
+
+
+You can also use the ~+=~ operator to append one string to another. For example, you can add an exclamation mark to the greeting by using ~+=~:
+
+#+begin_src swift
+greeting += "!" 
+print(greeting) // prints “Hello, world!”
+#+end_src
+
+String interpolation is another way to create strings from other values. You can use the ~\()~ syntax to insert any expression or variable inside a string literal. For example, you can create a lyric by interpolating the people and action variables inside a string:
+
+#+begin_src swift
+let people = "Haters"
+let action = "hate" 
+let lyric = "\(people) gonna \(action)" 
+print(lyric) // prints “Haters gonna hate”
+#+end_src
+
+
+String interpolation is very powerful and flexible. You can use it to insert any type of value inside a string, such as numbers, booleans, arrays, and even other strings. For example, you can create a sentence by interpolating an array of names inside a string:
+
+#+begin_src swift
+let names = ["Taylor", "Selena", "Ariana"] 
+let sentence = "My favorite singers are \(names[0]), \(names[1]), and \(names[2])." 
+print(sentence) // prints “My favorite singers are Taylor, Selena, and Ariana.”
+#+end_src
+
+
+** Test - Doubles and booleansC
+
+Question 1: Which of these lines use string interpolation?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var name = "\(firstName) \(lastName)"
+#+end_src
+
+This uses string interpolation to create a string variable called ~name~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var versionString = "You're using v(version)"
+#+end_src
+
+String interpolation is written as ~\(version)~.
+
+Question 2: Which of these lines use string interpolation?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var alert = "Error: \(message)!"
+#+end_src
+
+This uses string interpolation to create a string variable called ~alert~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var message = "Installation failed: \{reason}."
+#+end_src
+
+String interpolation is written as ~\(reason)~.
+
+Question 3: Which of these lines use string interpolation?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var forecast = "Today's weather will be \(weather)"
+#+end_src
+
+This uses string interpolation to create a string variable called ~forecast~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var formattedHeight = "You are (size)cm"
+#+end_src
+
+String interpolation is written as ~\(size)~.
+
+Question 4: Which of these lines use string interpolation?
+
+- [X] Option 1:
+#+begin_src swift :tangle no
+var result = "\(daysRemaining) days to go"
+#+end_src
+
+This uses string interpolation to create a string variable called ~result~.
+
+- [ ] Option 2:
+#+begin_src swift :tangle no
+var engine = "Your engine is (size)cc"
+#+end_src
+
+String interpolation is written as ~\(size)~.
+
+Question 5: Which of these lines use string interpolation?
+
+- [ ] Option 1:
+#+begin_src swift :tangle no
+var str = "Hello, playground!"
+#+end_src
+
+This is just a plain string.
+
+- [X] Option 2:
+#+begin_src swift :tangle no
+var warning = "You need to be \(years) or older"
+#+end_src
+
+This creates a Boolean with the nameThis uses string interpolation to create a string variable called ~warning~.
+
+Question 6: Which of these lines use string interpolation?
+
+- [ ] Option 1:
+#+begin_src swift :tangle no
+var error = "Error, please try again."
+#+end_src
+
+This is just a plain string.
+
+- [X] Option 2:
+#+begin_src swift :tangle no
+var greeting = "Hello, \(name)!"
+#+end_src
+
+This uses string interpolation to create a string variable called ~greeting~.
