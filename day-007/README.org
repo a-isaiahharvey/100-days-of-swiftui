@@ -1,5 +1,4 @@
 #+title: Day 7
-#+subtitle: functions, parameters, and return values
 #+author: Allister Isaiah Harvey
 #+date: 15-11-2023
 #+property: header-args :tangle Day7.swift
@@ -27,7 +26,7 @@
   - Parameter : placeholder used in function body
   - Argument : actual value we send into
 
-#+begin_src swift
+#+begin_src swift :tangle no
 // func : It marks the start of a function
 // printTimesTables(number:end:) : The name of the function
 // number, end : Parameters of the function
@@ -62,7 +61,7 @@ printTimesTables(number: 5, end: 20)
 - Write an arrow then a data type before your function's opening braces; whit kind of data will get sent back.
 - Use the ~return~ keyword to send back your data.
 
-#+begin_src swift
+#+begin_src swift :tangle no
 func areLettersIdentical(string1: String, string2: String) -> Bool {
     let first = string1.sorted()
     let second = string2.sorted()
@@ -72,7 +71,7 @@ func areLettersIdentical(string1: String, string2: String) -> Bool {
 
 - When a function has only one line of code, we can remove the ~return~ keyword.
 
-#+begin_src swift
+#+begin_src swift :tangle no
 func areLettersIdentical(string1: String, string2: String) -> Bool {
     string1.sorted() == string2.sorted()
 }
@@ -83,7 +82,7 @@ func areLettersIdentical(string1: String, string2: String) -> Bool {
 - A function contains only a single expression.
 - When a function contains loops or conditions, you can't remove ~return~ value.
 
-#+begin_src swift
+#+begin_src swift :tangle no
 func greet(name: String) -> String {
     if name == "Taylor Swift" {
         return "Oh wow!"  // can't remove `return`
@@ -101,7 +100,7 @@ func greet(name: String) -> String {
 
 - If you return two or more values from a function, you could use collections like array, set, dictionary, or *tuples*.
 
-#+begin_src swift
+#+begin_src swift :tangle no
 func getUser() -> [String] {
   ["Taylor", "Swift"]
 }
@@ -114,7 +113,7 @@ func getUser() -> [String: String] {
 - Or, you can use *tuples* instead of collections.
 - Tuples have a key advantage over dictionaries: we specify exactly which values will exist and what types they have.
 
-#+begin_src swift
+#+begin_src swift :tangle no
 func getUser() -> (firstName: String, lastName: String) {
   (firstName: "Taylor", lastName: "Swift")
 }
